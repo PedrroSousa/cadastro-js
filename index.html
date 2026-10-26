@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro | JS na Prática</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <header class="header">
+        <div class="logo">JS</div>
+        <div>
+          <h1>Criar conta</h1>
+          <p>Preencha seus dados para continuar.</p>
+        </div>
+      </header>
+
+      <form id="cadastroForm">
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+          <small class="error" id="nomeErro"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="exemplo@email.com">
+          <small class="error" id="emailErro"></small>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" name="idade" placeholder="18" min="0">
+            <small class="error" id="idadeErro"></small>
+          </div>
+
+          <div class="field">
+            <label for="nascimento">Nascimento</label>
+            <input type="date" id="nascimento" name="nascimento">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Sexo</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="sexo" value="Masculino">
+              Masculino
+            </label>
+            <label class="option">
+              <input type="radio" name="sexo" value="Feminino">
+              Feminino
+            </label>
+            <label class="option">
+              <input type="radio" name="sexo" value="Outro">
+              Outro
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="estado">Estado</label>
+          <select id="estado" name="estado">
+            <option value="">Selecione seu estado</option>
+            <option>Ceará</option>
+            <option>Bahia</option>
+            <option>Pernambuco</option>
+            <option>Paraíba</option>
+            <option>Rio Grande do Norte</option>
+            <option>Piauí</option>
+            <option>Maranhão</option>
+            <option>Pará</option>
+            <option>São Paulo</option>
+            <option>Rio de Janeiro</option>
+            <option>Minas Gerais</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="senha">Senha</label>
+          <div class="password">
+            <input type="password" id="senha" name="senha" placeholder="Crie uma senha">
+            <button type="button" id="mostrarSenha" aria-label="Mostrar senha">👁</button>
+          </div>
+          <div class="strength">
+            <div class="strength-bar" id="strengthBar"></div>
+          </div>
+          <small id="senhaInfo">Digite uma senha</small>
+        </div>
+
+        <div class="field">
+          <label for="confirmarSenha">Confirmar senha</label>
+          <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Digite a senha novamente">
+          <small class="error" id="senhaErro"></small>
+        </div>
+
+        <div class="field">
+          <label>Interesses</label>
+          <div class="checks">
+            <label class="option">
+              <input type="checkbox" name="interesses" value="Programação">
+              Programação
+            </label>
+            <label class="option">
+              <input type="checkbox" name="interesses" value="Jogos">
+              Jogos
+            </label>
+            <label class="option">
+              <input type="checkbox" name="interesses" value="Música">
+              Música
+            </label>
+            <label class="option">
+              <input type="checkbox" name="interesses" value="Esportes">
+              Esportes
+            </label>
+          </div>
+        </div>
+
+        <label class="terms">
+          <input type="checkbox" id="termos">
+          <span>Aceito os termos de uso.</span>
+        </label>
+
+        <button class="submit" type="submit">Criar conta</button>
+
+        <div id="mensagem" class="message"></div>
+      </form>
+
+      <div id="resultado" class="result hidden">
+        <h2>Cadastro realizado!</h2>
+        <p id="resumo"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
